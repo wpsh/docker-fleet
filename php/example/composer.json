@@ -1,0 +1,10 @@
+{
+    "type": "project",
+    "require": {
+        "johnpbloch/wordpress": "^5.3",
+        "rarst/laps": "^3.3"
+    },
+    "extra": {
+        "wordpress-install-dir": "app/wp"
+    }
+}
