@@ -1,2 +1,3 @@
 # See https://github.com/hadolint/hadolint#readme
 ignored:
+  - DL3018 # Don't require pinned versions for apk packages.
