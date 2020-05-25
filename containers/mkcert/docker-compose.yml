@@ -3,12 +3,12 @@ version: '2'
 services:
 
   latest:
-    image: mkcert:latest
+    image: wpsh/mkcert:latest
     build:
       context: .
 
   v1.4.1:
-    image: mkcert:1.4.1
+    image: wpsh/mkcert:1.4.1
     build:
       context: .
       args:
