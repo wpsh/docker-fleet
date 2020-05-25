@@ -17,41 +17,33 @@ version:
 	@make --version
 
 images.build:
-	@docker-compose \
-		--file containers/*/docker-compose.build.yml \
-		build
+	find ./containers -type f -name docker-compose.build.yml -exec \
+		docker-compose --file {} build --parallel \;
 
 images.clean:
-	@docker-compose \
-		--file containers/*/docker-compose.build.yml \
-		clean
+	find . -type f -name docker-compose*.yml -exec \
+		docker-compose --file {} rm --force -v \;
 
 images.push: images.build
-	@docker-compose \
-		--file containers/*/docker-compose.build.yml \
-		push
+	find ./containers -type f -name docker-compose.build.yml -exec \
+		docker-compose --file {} push \;
 
 images.test:
-	@docker-compose \
-		--file containers/*/docker-compose.test.yml \
-		run --rm --build --renew-anon-volumes --exit-code-from \
-		sut
+	find ./containers -type f -name docker-compose.test.yml -exec \
+		docker-compose --file {} up --remove-orphans --build --renew-anon-volumes --exit-code-from sut sut \;
 
 lint.dockerfile:
-	@docker-compose run lint-dockerfile
+	docker-compose run lint-dockerfile
 
 lint.docker-compose:
-	@docker-compose \
-		--file containers/*/docker-compose.build.yml \
-		--file containers/*/docker-compose.test.yml \
-		--file docker-compose.yml \
-		config --quiet
+	find . -type f -name docker-compose*.yml -exec \
+		docker-compose --file {} config --quiet \;
 
 lint.yaml:
-	@docker-compose run lint-yaml
+	docker-compose run lint-yaml
 
 lint.makefile:
-	@docker-compose run lint-makefile
+	docker-compose run lint-makefile
 
 lint.all: lint.docker-compose lint.dockerfile lint.yaml lint.makefile
 
