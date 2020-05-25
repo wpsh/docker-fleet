@@ -10,3 +10,12 @@ script:
   - make lint
   - make images.test
   - make images.build
+
+deploy:
+  provider: script
+  script: make images.push
+  on:
+    tags: true
+
+notifications:
+  email: false
