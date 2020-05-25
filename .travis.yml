@@ -17,7 +17,8 @@ deploy:
   provider: script
   script: make images.push
   on:
-    tags: true
+    repo: wpsh/docker-fleet
+    branch: master
 
 notifications:
   email: false
