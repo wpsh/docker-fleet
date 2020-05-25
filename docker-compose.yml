@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+
+  hadolint:
+    image: hadolint/hadolint:v1.17.6-alpine
+    volumes:
+      - .:/test
+      - .hadolint.yml:/.hadolint.yaml
+    command: ls /test/*
