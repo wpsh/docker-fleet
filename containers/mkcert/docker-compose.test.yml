@@ -1,3 +1,7 @@
-sut:
-  build: .
-  command: mkcert --version
+version: '2'
+
+services:
+
+  sut:
+    build: .
+    command: mkcert --version
