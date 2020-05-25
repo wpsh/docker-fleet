@@ -51,8 +51,9 @@ RUN apk add --update --no-cache --virtual .build-deps \
         opcache \
         zip \
     \
-    && curl -sS https://getcomposer.org/installer | php -- \
-        --version=$PHP_COMPOSER_VERSION \
+    && curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php \
+    && php /tmp/composer-setup.php \
+		--version=$PHP_COMPOSER_VERSION \
         --install-dir=/usr/local/bin \
         --filename=composer \
     \
