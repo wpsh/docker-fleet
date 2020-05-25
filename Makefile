@@ -26,3 +26,7 @@ test:
 	docker-compose --file containers/*/docker-compose.test.yml run \
 	--rm --build --renew-anon-volumes --exit-code-from \
 	sut
+
+version:
+	@docker --version
+	@docker-compose --version
