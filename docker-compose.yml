@@ -7,4 +7,4 @@ services:
     volumes:
       - .:/test
       - .hadolint.yml:/.hadolint.yaml
-    command: ls /test/*
+    command: find /test -type f -name Dockerfile -exec hadolint {} +
