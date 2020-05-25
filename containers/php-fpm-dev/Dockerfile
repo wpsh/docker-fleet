@@ -16,7 +16,7 @@ RUN apk add --update --no-cache \
 
 # Install temporary build tools and PHP extensions.
 RUN apk add --update --no-cache --virtual .build-deps \
-		"$PHPIZE_DEPS" \
+		$PHPIZE_DEPS \
         curl \
         curl-dev \
         freetype-dev \
