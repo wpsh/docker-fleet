@@ -1,6 +1,8 @@
 # Docker Container Fleet
 
-See [hub.docker.com/orgs/wpsh/repositories](https://hub.docker.com/orgs/wpsh/repositories).
+[![Build Status](https://travis-ci.com/wpsh/docker-fleet.svg?branch=master)](https://travis-ci.com/wpsh/docker-fleet)
+
+See [hub.docker.com/orgs/wpsh/repositories](https://hub.docker.com/orgs/wpsh/repositories)
 
 
 ## Requirements
@@ -8,7 +10,7 @@ See [hub.docker.com/orgs/wpsh/repositories](https://hub.docker.com/orgs/wpsh/rep
 - Docker
 - make
 
-Use Homebrew to install the dependencies:
+Use [Homebrew](https://brew.sh) to install the dependencies:
 
 	brew install docker make
 
