@@ -3,6 +3,7 @@
 BUILD_REV=$(shell git rev-parse --short HEAD)
 BUILD_DATE=$(shell date -u +"%Y-%m-%dT%H:%M:%SZ")
 
+# See https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html
 .PHONY: all clean test lint version
 
 all: help
