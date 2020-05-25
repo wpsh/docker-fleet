@@ -1,0 +1,12 @@
+dist: bionic
+
+services:
+  - docker
+
+before_scripts:
+  - make version
+
+script:
+  - make lint
+  - make images.test
+  - make images.build
