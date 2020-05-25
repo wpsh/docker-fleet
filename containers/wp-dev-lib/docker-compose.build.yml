@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+
+  latest:
+    image: wpsh/wp-dev-lib:latest
+    build:
+      context: .
+
+  php5.4:
+    image: wpsh/wp-dev-lib:php7.4
+    build:
+      context: .
+      args:
+        WP_PHP_VERSION: 7.4

@@ -1,0 +1,14 @@
+{
+  "name": "wpsh/docker-fleet-wp-dev-lib-test",
+  "type": "wordpress-plugin",
+  "license": "MIT",
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "^6",
+    "xwp/wp-dev-lib": "^1.6"
+  },
+  "scripts": {
+    "post-install-cmd": "git init . && git add --all",
+    "test": "./vendor/xwp/wp-dev-lib/scripts/pre-commit"
+  }
+}

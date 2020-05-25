@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+
+  sut:
+    build: .
+    working_dir: /var/www/html
+    volumes:
+      - ./tests:/var/www/html
+    command: bash -c "composer install && composer test"
+    environment:
+      CHECK_SCOPE: all

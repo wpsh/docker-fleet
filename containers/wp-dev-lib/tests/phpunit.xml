@@ -1,0 +1,11 @@
+<phpunit
+	bootstrap="vendor/xwp/wp-dev-lib/sample-config/phpunit-plugin-bootstrap.php"
+	backupGlobals="false"
+	colors="true"
+	>
+	<testsuites>
+		<testsuite name="Sample">
+			<directory suffix="Test.php">./src</directory>
+		</testsuite>
+	</testsuites>
+</phpunit>
