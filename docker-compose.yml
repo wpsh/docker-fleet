@@ -2,9 +2,20 @@ version: '2'
 
 services:
 
-  hadolint:
+  lint-dockerfile:
     image: hadolint/hadolint:v1.17.6-alpine
     volumes:
       - .:/test
-      - .hadolint.yml:/.hadolint.yaml
-    command: find /test -type f -name Dockerfile -exec hadolint {} +
+    command: find /test -type f -name Dockerfile -exec hadolint --config /test/.hadolint.yml {} +
+
+  lint-yaml:
+    image: cytopia/yamllint:1.20
+    volumes:
+      - .:/data
+    command: /data
+
+  lint-makefile:
+    image: cytopia/checkmake:0.1.0
+    volumes:
+      - .:/data
+    command: Makefile
