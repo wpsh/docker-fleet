@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+
+  php7.4-alpine:
+    image: wpsh/php7.4-fpm-dev-alpine
+    build:
+      context: .
+
+  php7.3-alpine:
+    image: wpsh/php7.3-fpm-dev-alpine
+    build:
+      context: .
+      args:
+        PHP_VERSION: "7.3"
+
+  php7.2-alpine:
+    image: wpsh/php7.2-fpm-dev-alpine
+    build:
+      context: .
+      args:
+        PHP_VERSION: "7.2"

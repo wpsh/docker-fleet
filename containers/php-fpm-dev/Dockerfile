@@ -1,11 +1,8 @@
-FROM php:7.4-fpm-alpine
+ARG PHP_VERSION=7.4
 
-ENV PHP_COMPOSER_VERSION 1.9.1
-ENV PHP_SENDMAIL_HOST localhost
-ENV PHP_SENDMAIL_PORT 1025
-ENV PHP_OPCACHE_ENABLE 1
-ENV PHP_DEBUG_ENABLE 0
-ENV PHP_XDEBUG_ENABLE $PHP_DEBUG_ENABLE
+FROM php:${PHP_VERSION}-fpm-alpine
+
+ARG PHP_COMPOSER_VERSION=1.9.1
 
 # Install persistant dependencies and utilities.
 RUN apk add --update --no-cache \
@@ -19,7 +16,6 @@ RUN apk add --update --no-cache \
 
 # Install temporary build tools and PHP extensions.
 RUN apk add --update --no-cache --virtual .build-deps \
-        $PHPIZE_DEPS \
         curl \
         curl-dev \
         freetype-dev \
