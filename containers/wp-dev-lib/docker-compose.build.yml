@@ -7,7 +7,7 @@ services:
     build:
       context: .
 
-  php5.4:
+  php7.4:
     image: wpsh/wp-dev-lib:php7.4
     build:
       context: .
