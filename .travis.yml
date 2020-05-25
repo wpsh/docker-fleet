@@ -1,9 +1,11 @@
 dist: bionic
 
+language: shell
+
 services:
   - docker
 
-before_scripts:
+before_script:
   - make version
 
 script:
