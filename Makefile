@@ -18,7 +18,7 @@ version:
 
 images.build:
 	find ./containers -type f -name docker-compose.build.yml -exec \
-		docker-compose --file {} build --parallel \;
+		docker-compose --file {} build \;
 
 images.clean:
 	find . -type f -name docker-compose*.yml -exec \
